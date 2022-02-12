@@ -1,0 +1,60 @@
+{
+  "name": "yzen.dev/laravel-send-pulse",
+  "version": "0.1",
+  "description": "Laravel SendPulse",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "license": "MIT",
+  "keywords": [ "laravel", "sendpulse"],
+  "authors": [
+    {
+      "name": "Andey Iatsenko",
+      "email": "yzen.dev@gmail.com"
+    }
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "autoload": {
+    "psr-4": {
+      "LaravalSendpulse\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "php": "^7.4",
+    "sendpulse/rest-api": "^1.0"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^0.12.37",
+    "mockery/mockery": "^1.0",
+    "phpunit/phpunit": "^9.3",
+    "squizlabs/php_codesniffer": "*"
+  },
+  "support": {
+    "issues": "https://github.com/yzen-dev/laravel-send-pulse/issues",
+    "source": "https://github.com/yzen-dev/laravel-send-pulse"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "LaravalSendpulse\\ServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "phpunit": [
+      "./vendor/phpunit/phpunit/phpunit --configuration ./phpunit.xml"
+    ],
+    "phpstan": [
+      "./vendor/bin/phpstan analyse -c ./phpstan.neon src"
+    ],
+    "phpcs": [
+      "./vendor/bin/phpcs --standard=./phpcs.xml -n --no-cache"
+    ]
+  }
+}
